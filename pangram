@@ -1,0 +1,7 @@
+st="The quick brown fox jumps over the lazy dog".lower()
+for i in range(97,123):
+    if chr(i) not in st:
+        print('not a pangram string')
+        break
+else:
+    print('pangram string')
