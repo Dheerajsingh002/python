@@ -1,0 +1,51 @@
+class library:
+    def __init__(self,listofbooks):
+        self.books=listofbooks
+    def displayAvailableBooks(self):
+        print("Books present in this library are: ")
+        for book in self.books:
+            print("*"+book)
+    def borrowBook(self,bookName):
+        if bookName in self.books:
+            print(f"you have been issued {bookName} please keep it safe and return in 30 days")
+            self.books.remove(bookName)
+            return True
+        else:
+            print("sorry,this book is either not avaulable or has already been issued to someone else.please wait until book is available")
+            return False
+def returnBook(self,bookName):
+        self.bboks.append(bookName)
+        print("Thanks for returning this book! Hopen you enjoyed reading it. have a greatbday ahesd")
+
+
+class Student:
+    def requestBook(self):
+        self.book=input("Enter the name of book you want tio borrow")
+        return self.book
+    def returnBook(self):
+        self.book=input("Enter the name of book you want to return")
+        return self.book
+if __name__=="__main__":
+    centrallibrary=library(["Algorithms","Django","python","c++","c","java","DSA","Mysql","Sheel scriptiong","DBMS","CN","os","mathematics 1","mathematics 2","mathematics 3","mathematics 4"])
+    student=Student()
+    #centrallibrary displayAvailableBooks()
+    while(True):
+        welcomemsg='''\n===Welcome to Central Library==please choose an option:
+        1.list all the books
+        2.request a book
+        3.add/return a book
+        4.Exit the library
+        '''
+        print(welcomemsg)
+        a=input("Enter a chioce: ")
+        if a==1:
+            centrallibrary.displayAvailableBooks()
+        elif a==2:
+            centrallibrary.borrowBook(student.requestBook())
+        elif a==3:
+            centrallibrary.returnBook(student.returnBook())
+        elif a==4:
+            print("Thanks for choosing centrsl library have a great day ahead")
+            exit()
+        else:
+            print("Invalid choice!")
